@@ -1,0 +1,10 @@
+
+n=int(input("enter the no"))
+l=[]
+while(n not in l):
+    l.append(n)
+n=[int(1)*int(i) for i in str(n) ]
+if(n==1):
+    print("round")
+else:
+    print("not")
