@@ -1,0 +1,11 @@
+def tower(disk, source, aux, dest):
+    if disk == 1:
+        print("Move disk 1 from", source, "to", dest)
+        return
+    tower(disk - 1, source, dest, aux)
+    print("Move disk", disk, "from", source, "to", dest)
+    tower(disk - 1, aux, source, dest)
+
+disk = int(input("Enter number of disks: "))
+print("Steps involved are:")
+tower(disk, 'A', 'B', 'C')
