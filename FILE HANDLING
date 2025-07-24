@@ -1,0 +1,12 @@
+# file = open("Fan.txt", 'w')       # Opens the file in write mode
+# file.write("HI HELLO")            # Writes text to the file
+# file.close()                      # Properly closes the file
+# print("data is pushed successfully")  # Prints confirmation
+
+
+# file = open("trail.txt", 'r')  # Open the file "trail.txt" in read mode ('r').
+#                                # If the file doesn't exist, it will raise a FileNotFoundError.
+# data = file.readlines()        # Read all lines from the file and store them in a list called `data`.Each item in the list represents one line from the file (including '\n' if present).
+# for i in data:                 # Loop through each line in the list `data`.
+#     print(i.split())           # Use `.split()` to split the line into words using whitespace as delimiter,
+#                                # and print the resulting list of words.
