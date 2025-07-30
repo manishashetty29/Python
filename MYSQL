@@ -1,0 +1,34 @@
+
+USE BATCHE;
+create table citizen(id int,name varchar(20),salary int, gender varchar(20));
+
+insert into citizen(id,name,salary,gender)values
+(1,"MANISH",110000,"MALE"),
+(2,"MANISHA",200000,"FEMALE"),
+(3,"VARSHA",350000,"FEMALE"),
+(4,"RAVI",900000,"MALE"),
+(5,"RAJU",600000,"MALE"),
+(6,"ASHVITHA",400000,"FEMALE");
+select * from citizen limit 2;
+select name,salary,
+case
+when salary>1000000 then salary*0.3
+when salary between 700000 and 1000000 then salary *0.2
+when salary between 500000 and 7000000 then salary *0.1
+when salary between 300000 and 500000 and gender="MALE" then salary*0.05
+else 0
+end as tax_detected from citizen;
+
+update citizen set salary=salary+1500 where salary<500000;
+select *from citizen;
+update citizen set salary=salary +1500 where name="MANISH";
+SET SQL_safe_updates =0;
+insert into citizen(id,name,salary)values
+(10,"abc",350000),
+(20,"efg",350000);
+select * from citizen order by salary desc;
+select * from citizen where gender="male" order by salary;
+alter table citizen add DOB DATE;
+update citizen set DOB='2025-07-30';
+select * from citizen;
+update citizen set DOB='1999-09-19' where gender="FEMALE";
