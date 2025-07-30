@@ -1,0 +1,33 @@
+
+CREATE database BATCHE;
+USE BATCHE;
+create table student(id INT,name varchar(20));
+insert into student(id,name)values
+(1,"RAJU"),
+(2,"RAVI"),
+(3,"VARSHA"),
+(4,"MANISHA");
+select * from student;
+
+
+
+
+#PYCHARM
+
+import mysql.connector
+mydb=mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root2004",
+    database="BATCHE"
+)
+if mydb.is_connected():
+    print("the connection has to be established")
+    c=mydb.cursor()
+    query=" select * from student"
+    c.execute(query)
+    rows=c.fetchall()
+    for i in rows:
+        print("id is {}".format(i[0]))
+        print("Name is {}".format((i[1])))
+        print("--------------")
